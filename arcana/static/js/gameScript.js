@@ -95,10 +95,12 @@ function displayCards() {
 document.addEventListener('DOMContentLoaded', function () {
     // Retrieve the model from the query parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const selectedModel = urlParams.get('model');
+    //
+    const selectedModel = sessionStorage.getItem('selectedModel');
+    // const selectedModel = urlParams.get('model');
 
     if (selectedModel) {
-        // Store the selected model in sessionStorage
+        // Store the selected model in sessionStorage ///
         sessionStorage.setItem('selectedModel', selectedModel);
 
         // Play the corresponding voice based on the selected model

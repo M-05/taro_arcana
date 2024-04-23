@@ -9,13 +9,14 @@ templates = Jinja2Templates(directory="arcana/templates")
 #     celebName: str
 
 @router.get('/firstGame')
-async def first_game(request: Request, model: str=None):
-    print(f"model : \n{model}")
-    if not model:
-        raise HTTPException(status_code=400, detail="Celebrity name is required.")
+async def first_game(request: Request):
     
-    if model not in ['iu', 'cha', 'chunsik']:
-        raise HTTPException(status_code=404, detail="Celebrity not found.")
+    # print(f"model : \n{model}")
+    # if not model:
+    #     raise HTTPException(status_code=400, detail="Celebrity name is required.")
+    
+    # if model not in ['iu', 'cha', 'chunsik']:
+    #     raise HTTPException(status_code=404, detail="Celebrity not found.")
     
 
-    return templates.TemplateResponse("firstGame.html", {"request": request, "model": model})
+    return templates.TemplateResponse("firstGame.html", {"request": request})

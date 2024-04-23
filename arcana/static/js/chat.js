@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 var message = {
                     message: messageContent,
                     time: currentTime, // 메시지 객체에 시간 추가
-                    sender: '나' // 메시지 객체에 발신자 추가
+                    sender: '나', // 메시지 객체에 발신자 추가
+                    celebrity: selectedModel
                 };
                 ws.send(JSON.stringify(message)); // 메시지를 서버로 JSON 형식으로 전송
                 messageInput.value = '';

@@ -5,18 +5,20 @@ import json
 
 router = APIRouter()
 
-def load_celebName():
-    import json
+# def load_celebName(celebName):
+#     import json
 
-    with open("./arcana//static/celebName.json", "r") as f:
-        celebName = json.loads(f.read())
-        # print(type(celebName))
-        if celebName['celebName'] == 'iu':
-            return 0
-        elif celebName['celebName'] == 'cha':
-            return 1
-        else:
-            return 2
+#     with open("./arcana//static/celebName.json", "r") as f:
+#         celebName = json.loads(f.read())
+#         print(type(celebName))
+#         if celebName == 'iu':
+#             return 0
+#         elif celebName == 'cha':
+#             return 1
+#         else:
+#             return 2
+
+
 
 # chat_websocket.py
 @router.websocket('/chatting')
@@ -29,12 +31,13 @@ async def websocket_chatting(websocket: WebSocket):
             message = data["message"]
             time = data.get("time", "")  # 클라이언트에서 보낸 시간 정보를 가져옵니다.
             sender = data.get("sender", "나")  # 클라이언트에서 보낸 발신자 정보를 가져옵니다.
-            
+            celebName = data['celebrity']
             print(f"{sender}의 질문 : {message}")
             await websocket.send_json({"message": message, "sender": "나", "time": time})
 
+            print(f"연예인은 : {celebName}")
             # 모델을 사용하여 챗봇 응답 생성
-            celebrity = ["iu", "cha", "chun"]
+            # celebrity = ["iu", "cha", "chun"]
 
             # reply = model_chat.answer2you(message, celebrity[load_celebName()])
             
@@ -42,7 +45,7 @@ async def websocket_chatting(websocket: WebSocket):
             
             # 클라이언트로 사용자의 메시지와 챗봇의 응답을 전송
             
-            await websocket.send_json({"message": model_chat.answer2you(message, celebrity[load_celebName()]), "sender": celebrity[load_celebName()], "time": time})
+            await websocket.send_json({"message": model_chat.answer2you(message, celebName), "sender": celebName, "time": time})
 
     except WebSocketDisconnect:
         print("webSocket dissconnet 입니다.")

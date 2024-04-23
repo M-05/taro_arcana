@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener('click', function () {
             const model = item.dataset.model;
 
-            fetch(`/firstGame?model=${model}`)
+            fetch(`/firstGame`)
             .then(response => {
                 // 응답 유형 확인
                 const contentType = response.headers.get('Content-Type');
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 console.log(data);
                 sessionStorage.setItem('selectedModel', model);
-                window.location.href = `/firstGame?model=${model}`;
+                window.location.href = `/firstGame`;
             })
             .catch(error => {
                 console.error('Error:', error);
