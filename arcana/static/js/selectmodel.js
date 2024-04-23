@@ -31,7 +31,26 @@ document.addEventListener("DOMContentLoaded", function () {
         item.addEventListener('click', function () {
             const model = item.dataset.model;
 
-            // console.log(`seletModel page :\n${model}`);
+            fetch(`/firstGame?model=${model}`)
+            .then(response => {
+                // 응답 유형 확인
+                const contentType = response.headers.get('Content-Type');
+                if (contentType && contentType.includes('application/json')) {
+                  // JSON 응답 처리
+                return response.json();
+                } else {
+                  // 텍스트 응답 처리
+                return response.text();
+                }
+            })
+            .then(data => {
+                console.log(data);
+                sessionStorage.setItem('selectedModel', model);
+                window.location.href = `/firstGame?model=${model}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
             // // AJAX 요청으로 서버에 데이터 전송
             // fetch('/celebName', {
             //     method: 'POST',
@@ -46,13 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
             // .then(data => console.log(data))
             // .catch(error => console.error('Error:', error));
 
-            sessionStorage.setItem('selectedModel', model);
+            // sessionStorage.setItem('selectedModel', model);
             
-            // 0.3초 후에 /firstGame?model=${model} 페이지로 이동합니다.
-            setTimeout(() => {
-                window.location.href = "/firstGame";
-                // `/firstGame?model=${model}`;
-            }, 300);
+            // // 0.3초 후에 /firstGame?model=${model} 페이지로 이동합니다.
+            // setTimeout(() => {
+            //     window.location.href =`/firstGame?model=${model}`;
+            // }, 300);
         });
 
         // Add mouseenter event listener to play hover sound for the specific item
