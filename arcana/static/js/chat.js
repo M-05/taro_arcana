@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const sendButton = document.getElementById('send-button');
         // 채팅 화면창
         var chatMessages = document.getElementById('chat-messages');
-        // 웹소켓 연결 생성 //http = ws // https = wss
+        // 웹소켓 연결 생성
         // var ws = new WebSocket(`ws://${document.domain}:${location.port}/chatting`);
         var ws = new WebSocket(`wss://${document.domain}:${location.port}/chatting`);
 

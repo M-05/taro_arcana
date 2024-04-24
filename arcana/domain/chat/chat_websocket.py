@@ -5,20 +5,18 @@ import json
 
 router = APIRouter()
 
-# def load_celebName(celebName):
+# def load_celebName():
 #     import json
 
 #     with open("./arcana//static/celebName.json", "r") as f:
 #         celebName = json.loads(f.read())
-#         print(type(celebName))
-#         if celebName == 'iu':
+#         # print(type(celebName))
+#         if celebName['celebName'] == 'iu':
 #             return 0
-#         elif celebName == 'cha':
+#         elif celebName['celebName'] == 'cha':
 #             return 1
 #         else:
 #             return 2
-
-
 
 # chat_websocket.py
 @router.websocket('/chatting')
@@ -35,7 +33,6 @@ async def websocket_chatting(websocket: WebSocket):
             print(f"{sender}의 질문 : {message}")
             await websocket.send_json({"message": message, "sender": "나", "time": time})
 
-            print(f"연예인은 : {celebName}")
             # 모델을 사용하여 챗봇 응답 생성
             # celebrity = ["iu", "cha", "chun"]
 

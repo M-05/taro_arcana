@@ -44,11 +44,6 @@ async def create_subscription(
                                 db: Session = Depends(get_db)):
     """
     구독
-    name : str
-    email : str
-    age : str
-    gender : str
-    gacvorite_celebrity : Optional[str]
     """
     try:
         subscription_data = SubscriptionCreate(name=name,

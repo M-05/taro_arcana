@@ -60,7 +60,7 @@ function displayCards() {
 
         var cardBack = document.createElement('img');
         cardBack.src = basePath + 'back.png'; // Path to card back image
-        cardBack.style.width = '90px';
+        cardBack.style.width = '100px';
         newCard.appendChild(cardBack);
 
         gameContainer.appendChild(newCard);
@@ -95,13 +95,12 @@ function displayCards() {
 // Execute the code after DOM content is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
     // Retrieve the model from the query parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    //
-    const selectedModel = sessionStorage.getItem('selectedModel');
+    // const urlParams = new URLSearchParams(window.location.search);
     // const selectedModel = urlParams.get('model');
+    const selectedModel = sessionStorage.getItem('selectedModel');
 
     if (selectedModel) {
-        // Store the selected model in sessionStorage ///
+        // Store the selected model in sessionStorage
         sessionStorage.setItem('selectedModel', selectedModel);
 
         // Play the corresponding voice based on the selected model

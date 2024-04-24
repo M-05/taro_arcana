@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="arcana/templates")
 
 @router.get('/firstGame')
 async def first_game(request: Request):
-    
+    # print(request.json())
     # print(f"model : \n{model}")
     # if not model:
     #     raise HTTPException(status_code=400, detail="Celebrity name is required.")
