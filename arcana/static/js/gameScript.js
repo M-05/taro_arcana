@@ -60,6 +60,7 @@ function displayCards() {
 
         var cardBack = document.createElement('img');
         cardBack.src = basePath + 'back.png'; // Path to card back image
+        cardBack.style.width = '90px';
         newCard.appendChild(cardBack);
 
         gameContainer.appendChild(newCard);
