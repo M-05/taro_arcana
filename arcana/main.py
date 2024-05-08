@@ -10,6 +10,7 @@ import uvicorn
 from domain.chat import chat_websocket, chat_handler, chat_router
 from domain import about_router, cart_router, checkout_router, class_router, contact_router, counseling_router, goods_router, firstGame_router, thankyou_router, popup_router, selectmodel_router, fortune_router
 from domain.subscribe import subscribe_router
+from domain.board import board_router
 
 app = FastAPI()
 # static 및 html 파일 경로 설정
@@ -27,6 +28,8 @@ app.add_middleware(
 routers = [about_router.router, cart_router.router, checkout_router.router, contact_router.router, class_router.router, goods_router.router, counseling_router.router, firstGame_router.router, thankyou_router.router, chat_router.router, subscribe_router.router, popup_router.router, chat_websocket.router, chat_handler.router, selectmodel_router.router, fortune_router.router]
 for r in routers:
     app.include_router(r)
+app.include_router(board_router.router, tags=["board"])
+
 
 @app.get("/", response_class=HTMLResponse)
 async def main_index(request: Request):

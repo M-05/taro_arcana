@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // 채팅 화면창
         var chatMessages = document.getElementById('chat-messages');
         // 웹소켓 연결 생성
-        // var ws = new WebSocket(`ws://${document.domain}:${location.port}/chatting`);
-        var ws = new WebSocket(`wss://${document.domain}:${location.port}/chatting`);
+        var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        var ws = new WebSocket(`${protocol}//${document.domain}:${location.port}/chatting`);
 
         // fetch('/card-path', {
         //     method: 'POST',

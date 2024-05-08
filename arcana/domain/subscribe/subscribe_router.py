@@ -65,7 +65,7 @@ async def create_subscription(
     except Exception as e:
         db.rollback()
         # return {"제대로 입력하세요"}
-        return JSONResponse(status_code=500, content={"message": "에러 "}, detail=str(e))
+        return JSONResponse(status_code=500, content={"message": "서버에서 오류가 발생했습니다. 문제를 해결할 수 없습니다."})
         
 
 # 모든 구독 정보 확인.
