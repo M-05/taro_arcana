@@ -1,5 +1,5 @@
 import re
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, constr
 from typing import Optional
 from datetime import datetime
 
@@ -7,8 +7,9 @@ from fastapi import HTTPException
 
 
 class NewUserForm(BaseModel):
+    # name: constr(min_length=1, max_length=50)
     name: str = Field(..., min_length=1, max_length=10)
-    phone: str = Field(..., min_length=1, max_length=13, alias="phone_number")
+    phone: str = Field(..., min_length=1, max_length=13)
     password: str = Field(..., min_length=1, max_length=100)
     email: str = Field(..., min_length=1, max_length=100)
 

@@ -28,7 +28,7 @@ app.add_middleware(
 # router 디렉토리 설정
 routers = [about_router.router, cart_router.router, checkout_router.router, contact_router.router, class_router.router, goods_router.router, counseling_router.router, firstGame_router.router, thankyou_router.router, chat_router.router, popup_router.router, chat_websocket.router, chat_handler.router, selectmodel_router.router, fortune_router.router]
 for r in routers:
-    app.include_router(r)
+    app.include_router(r, tags=["web"])
 app.include_router(board_router.router, tags=["board"])
 app.include_router(user_router.router, tags=["user"])
 app.include_router(subscribe_router.router, tags=["subscribe"])

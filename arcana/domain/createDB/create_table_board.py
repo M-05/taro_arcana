@@ -29,7 +29,7 @@ def create_table():
         Column("no", Integer, primary_key=True, autoincrement=True),
         Column("writer", VARCHAR(30), nullable=False),
         Column("title", VARCHAR(30), nullable=False),
-        Column("content", VARCHAR(100), nullable=False),
+        Column("content", VARCHAR(1000), nullable=False),
         Column("date", DateTime, nullable=False, default=datetime.now),
         Column("del_yn", VARCHAR(1), nullable=False, default='Y')    
     )

@@ -8,7 +8,7 @@ from datetime import datetime
 class NewPost(BaseModel):
     writer: str = Field(..., min_length=1, max_length=10)
     title: str = Field(..., min_length=1, max_length=30)
-    content: str = Field(..., min_length=1, max_length=100)
+    content: str = Field(..., min_length=1, max_length=1000)
     del_yn: str = Field(..., pattern='^[YyNn]$')
 
     @validator('writer')
