@@ -1,9 +1,8 @@
-from fastapi import APIRouter, Depends, Form, HTTPException, Request
+from fastapi import APIRouter, Depends, Form, HTTPException, Response, Request
 from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.security import OAuth2PasswordRequestForm
-from fastapi import Response
 
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
@@ -38,7 +37,6 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
     return encoded_jwt
 
 
-
 engine = database.engineconnect()
 session = engine.sessionmaker()
 
@@ -57,9 +55,10 @@ router = APIRouter(
 # async def about(request: Request):
 #     return templates.TemplateResponse("user.html", {"request": request})
 
-
-# 게시판 정보 생성 엔드포인트
-@router.post("/signup", description="회원가입")
+########
+# 회원가입
+########
+@router.post("/signup") #, description="회원가입")
 async def signup(
                 name: str = Form(...),
                 phone: str = Form(...), 
@@ -68,11 +67,11 @@ async def signup(
                 db: Session = Depends(get_db)
                 ):
     """
-    회원 가입
-    name: str
-    phone: str
-    password: str
-    email: str
+    `회원 가입`\n
+    name: str\n
+    phone: str\n
+    password: str\n
+    email: str\n
     """
     # 이메일 주소로 회원인지 아닌지 확인.
     check_user = user_crud.get_user(email, db)
@@ -82,20 +81,19 @@ async def signup(
     new_user = schema.NewUserForm(name=name, phone=phone, password=password, email=email)
     user_crud.create_user(new_user, db)
     return HTTPException(status_code=status.HTTP_200_OK, detail="회원가입 성공")
-
     
-
-
-@router.post(path="/login", description="로그인")
+########
+# 로그인
+########
+@router.post(path="/login") #, description="로그인")
 async def login(respone: Response, 
                 login_form: OAuth2PasswordRequestForm = Depends(),
                 db: Session = Depends(get_db)):
     """
     `로그인`\n
-    username : str = Email 주소
+    username : str = Email 주소\n
     password : str
     """
-
     user_email = login_form.username
     # print("-" * 15)
     # print(login_form.username)
@@ -103,9 +101,6 @@ async def login(respone: Response,
     # 'client_id', 'client_secret', 'grant_type', 'password', 'scopes', 'username']
     # print("-" * 15)
     check_user = user_crud.get_user(user_email, db)
-    # print("-" * 15)
-    # print(check_user)
-    # print("-" * 15)
     if not check_user:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="이름 혹은 비밀번호가 틀립니다.")
 
@@ -127,4 +122,15 @@ async def login(respone: Response,
     
     # return HTTPException(status_code=status.HTTP_200_OK, detail="로그인 성공")
     return schema.Token(access_token=access_token, token_type="bearer")
-    
+########
+# 로그아웃
+########
+@router.get(path='/loggout')    
+async def logout(respone: Response, request: Request):
+    """
+    `로그아웃`
+    """
+    request.cookies.get("access_token")
+    # cookie 삭제
+    respone.delete_cookie(key="access_token")
+    return HTTPException(status_code=status.HTTP_200_OK, detail="로그아웃 성공")
