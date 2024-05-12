@@ -48,3 +48,7 @@ class NewUserForm(BaseModel):
         if not re.match(email_regex, value):
             raise ValueError('올바른 이메일 형식이 아닙니다.')
         return value
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
