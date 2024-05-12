@@ -14,10 +14,10 @@
 
 # 🐳 docker로 접속 방법
 ```
-docker pull m005/arcana:v1.5
+docker pull m005/arcana:v1.6
 ```
 ```
-docker run --name taro -p 8000:8000 -d m005/arcana:v1.5
+docker run --name taro -p 8000:8000 -d m005/arcana:v1.6
 ```
 ---
 # 💻 로컬 접속 (MacOS M1)
@@ -35,6 +35,9 @@ PASSWORD=
 HOST=
 PORT=
 DBNAME=
+SECRET_KEY="e7ffd794-1019-11ef-9f31"
+ALGORITHM="HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES=60
 ```
 ### 🐍 미니콘다 사이트에서 직접 설치
 ```
@@ -55,7 +58,7 @@ pip install -r arcana/requirements.txt
 python arcana/main.py
 ```
 ---
-# 🐧리눅스 환경 접속 방법 (우분투 22.04)
+# 🐧리눅스 접속 (우분투 22.04)
 ### :octocat: 원하는 디렉토리에서 git clone
 ```
 git clone https://github.com/M-05/taro_arcana.git
@@ -70,6 +73,9 @@ PASSWORD=
 HOST=
 PORT=
 DBNAME=
+SECRET_KEY="e7ffd794-1019-11ef-9f31"
+ALGORITHM="HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES=60
 ```
 ### 🐍 미니콘다 설치
 ```
