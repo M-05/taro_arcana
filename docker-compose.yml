@@ -1,0 +1,13 @@
+version: '3.10'
+
+services:
+  my_service:
+    build:
+      context: .
+      args:
+        - UBUNTU_VERSION=22.04
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: ["python3", "arcana/main.py"]
