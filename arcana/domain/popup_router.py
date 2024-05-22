@@ -8,6 +8,7 @@ router = APIRouter()
 # 템플릿 디렉터리 설정
 templates = Jinja2Templates(directory="arcana/templates")
 
+
 @router.get('/popup', response_class=HTMLResponse)
 async def about(request: Request):
     return templates.TemplateResponse("popup.html", {"request": request})

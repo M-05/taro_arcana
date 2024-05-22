@@ -4,15 +4,17 @@ from datetime import datetime, timedelta
 
 Base = declarative_base()
 
+
 # UTC 시간에서 9시간을 더한 현재 시간을 반환하는 함수
 def current_time():
     return datetime.utcnow() + timedelta(hours=9)
+
 
 ######
 # 게시판
 ######
 class Board(Base):
-    __tablename__="board"
+    __tablename__ = "board"
 
     no = Column(Integer, primary_key=True, autoincrement=True)
     writer = Column(VARCHAR(30), nullable=False)

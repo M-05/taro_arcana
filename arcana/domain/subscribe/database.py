@@ -16,9 +16,10 @@ DBNAME = os.getenv("DBNAME")
 
 DB_URL = f'{SQL}://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}'
 
+
 class engineconnect:
     def __init__(self):
-        self.engine = create_engine(DB_URL, pool_recycle = 500)
+        self.engine = create_engine(DB_URL, pool_recycle=500)
 
     def sessionmaker(self):
         Session = sessionmaker(bind=self.engine)

@@ -4,7 +4,6 @@ from typing import Optional
 from datetime import datetime
 
 
-
 class NewPost(BaseModel):
     writer: str = Field(..., min_length=1, max_length=10)
     title: str = Field(..., min_length=1, max_length=30)
@@ -22,18 +21,19 @@ class NewPost(BaseModel):
         if len(value) < 1:
             raise ValueError('제목을 적어주세요.')
         return value
-    
+
     @validator('content')
     def check_content(cls, value):
         if len(value) < 1:
             raise ValueError('글을 적어주세요.')
         return value
-    
+
     @validator('del_yn')
     def check_del_yn(cls, value):
         if value not in ["Y", "N", "y", "n"]:
             raise ValueError('"Y" 또는 "N"이여야 합니다.')
         return value.upper()
+
 
 class PostList(BaseModel):
     no: int
@@ -41,12 +41,14 @@ class PostList(BaseModel):
     title: str
     date: datetime
 
+
 class Post(BaseModel):
     no: int
     writer: str
     title: str
-    content: str # Optional[str] = None
+    content: str  # Optional[str] = None
     date: datetime
+
 
 class UpdatePost(BaseModel):
     no: int

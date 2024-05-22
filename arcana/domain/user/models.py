@@ -4,15 +4,17 @@ from datetime import datetime, timedelta
 
 Base = declarative_base()
 
+
 # UTC 시간에서 9시간을 더한 현재 시간을 반환하는 함수
 def current_time():
     return datetime.utcnow() + timedelta(hours=9)
+
 
 ######
 # 유저.
 ######
 class User(Base):
-    __tablename__="Users"
+    __tablename__ = "Users"
 
     user_no = Column(Integer, primary_key=True, autoincrement=True)
     user_name = Column(VARCHAR(10), nullable=False)
