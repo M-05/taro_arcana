@@ -1,8 +1,11 @@
+import logging
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from starlette.middleware.cors import CORSMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import Response
 
 import uvicorn
 from domain.chat import chat_websocket, chat_handler, chat_router
@@ -13,6 +16,33 @@ from domain import (about_router, cart_router, checkout_router, class_router,
 from domain.subscribe import subscribe_router
 from domain.board import board_router
 from domain.user import user_router
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("app.log"),
+        logging.StreamHandler()
+    ]
+    )
+logger = logging.getLogger(__name__)
+
+
+class LoggingMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        logger.debug(f"Debug: Request received at {request.url}")
+        logger.info(f"Request: {request.method} {request.url}")
+        try:
+            response: Response = await call_next(request)
+            print(call_next(request))
+            logger.info(f"Request: {response.status_code}")
+            return response
+        except Exception as e:
+            logger.error(f"Error: Exception occurred - {str(e)}")
+            raise e
+        finally:
+            logger.debug(f"Debug: Completed processing request at {request.url}")
+
 
 app = FastAPI()
 # static 및 html 파일 경로 설정
@@ -26,6 +56,8 @@ app.add_middleware(
     allow_methods=['*'],  # 허용할 HTTP 메소드
     allow_headers=['*']
 )
+app.add_middleware(LoggingMiddleware)
+
 # router 디렉토리 설정
 routers = [
     about_router.router, cart_router.router, checkout_router.router,

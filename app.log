@@ -1,0 +1,98 @@
+2024-05-27 07:57:30,613 - watchfiles.main - INFO - 2 changes detected
+2024-05-27 07:58:02,254 - main - INFO - Request: GET http://127.0.0.1:8000/
+2024-05-27 07:58:02,313 - main - INFO - Request: GET http://127.0.0.1:8000/favicon.ico
+2024-05-27 08:00:16,730 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:00:17,313 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:00:18,499 - watchfiles.main - INFO - 2 changes detected
+2024-05-27 08:00:18,865 - watchfiles.main - INFO - 3 changes detected
+2024-05-27 08:00:24,265 - main - INFO - Request: GET http://127.0.0.1:8000/
+2024-05-27 08:00:24,277 - main - INFO - Request: 200
+2024-05-27 08:00:24,293 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:00:24,294 - main - INFO - Request: 404
+2024-05-27 08:00:24,993 - main - INFO - Request: GET http://127.0.0.1:8000/
+2024-05-27 08:00:24,997 - main - INFO - Request: 200
+2024-05-27 08:00:25,009 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:00:25,010 - main - INFO - Request: 404
+2024-05-27 08:00:36,144 - main - INFO - Request: GET http://127.0.0.1:8000/about
+2024-05-27 08:00:36,156 - main - INFO - Request: 200
+2024-05-27 08:00:36,169 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/blog_1.jpg
+2024-05-27 08:00:36,170 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/sa.jpg
+2024-05-27 08:00:36,173 - main - INFO - Request: 200
+2024-05-27 08:00:36,173 - main - INFO - Request: 200
+2024-05-27 08:00:36,201 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/mj.jpg
+2024-05-27 08:00:36,202 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/sm.jpg
+2024-05-27 08:00:36,203 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/jd.jpg
+2024-05-27 08:00:36,203 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:00:36,205 - main - INFO - Request: 404
+2024-05-27 08:00:36,206 - main - INFO - Request: 200
+2024-05-27 08:00:36,207 - main - INFO - Request: 200
+2024-05-27 08:00:36,208 - main - INFO - Request: 200
+2024-05-27 08:00:37,343 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:00:37,350 - main - INFO - Request: 200
+2024-05-27 08:00:37,359 - main - INFO - Request: GET http://127.0.0.1:8000/static/css/fortune.css
+2024-05-27 08:00:37,359 - main - INFO - Request: GET http://127.0.0.1:8000/static/js/fortune.js
+2024-05-27 08:00:37,360 - main - INFO - Request: 200
+2024-05-27 08:00:37,361 - main - INFO - Request: 200
+2024-05-27 08:01:11,024 - main - INFO - Request: GET http://127.0.0.1:8000/selectmodel
+2024-05-27 08:01:11,030 - main - INFO - Request: 200
+2024-05-27 08:01:11,037 - main - INFO - Request: GET http://127.0.0.1:8000/static/css/selectmodel.css
+2024-05-27 08:01:11,038 - main - INFO - Request: GET http://127.0.0.1:8000/static/js/selectmodel.js
+2024-05-27 08:01:11,038 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/model_1.jpg
+2024-05-27 08:01:11,038 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/model_2.jpg
+2024-05-27 08:01:11,041 - main - INFO - Request: 200
+2024-05-27 08:01:11,042 - main - INFO - Request: 200
+2024-05-27 08:01:11,042 - main - INFO - Request: 200
+2024-05-27 08:01:11,043 - main - INFO - Request: 200
+2024-05-27 08:01:11,075 - main - INFO - Request: GET http://127.0.0.1:8000/static/images/model_3.jpg
+2024-05-27 08:01:11,077 - main - INFO - Request: 200
+2024-05-27 08:01:11,131 - main - INFO - Request: GET http://127.0.0.1:8000/static/voices/iu_hi.mp3
+2024-05-27 08:01:11,132 - main - INFO - Request: GET http://127.0.0.1:8000/static/voices/cha_hi.mp3
+2024-05-27 08:01:11,132 - main - INFO - Request: GET http://127.0.0.1:8000/static/voices/liam_ogu.mp3
+2024-05-27 08:01:11,133 - main - INFO - Request: 200
+2024-05-27 08:01:11,134 - main - INFO - Request: 200
+2024-05-27 08:01:11,134 - main - INFO - Request: 200
+2024-05-27 08:05:03,182 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:05:03,747 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:05:05,043 - watchfiles.main - INFO - 2 changes detected
+2024-05-27 08:05:05,403 - watchfiles.main - INFO - 3 changes detected
+2024-05-27 08:05:29,476 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:05:31,182 - watchfiles.main - INFO - 2 changes detected
+2024-05-27 08:05:31,543 - watchfiles.main - INFO - 3 changes detected
+2024-05-27 08:05:37,542 - main - INFO - Request: GET http://127.0.0.1:8000/selectmodel
+2024-05-27 08:05:37,552 - main - INFO - Request: 200
+2024-05-27 08:05:39,431 - main - INFO - Request: GET http://127.0.0.1:8000/
+2024-05-27 08:05:39,441 - main - INFO - Request: 200
+2024-05-27 08:05:39,454 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:05:39,456 - main - INFO - Request: 404
+2024-05-27 08:05:45,023 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:05:45,033 - main - INFO - Request: 200
+2024-05-27 08:05:46,314 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:05:46,316 - main - INFO - Request: 200
+2024-05-27 08:05:46,765 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:05:46,767 - main - INFO - Request: 200
+2024-05-27 08:05:46,946 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:05:46,948 - main - INFO - Request: 200
+2024-05-27 08:05:47,135 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:05:47,137 - main - INFO - Request: 200
+2024-05-27 08:05:47,290 - main - INFO - Request: GET http://127.0.0.1:8000/fortune
+2024-05-27 08:05:47,291 - main - INFO - Request: 200
+2024-05-27 08:05:50,338 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:05:51,390 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:05:51,888 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:05:53,021 - watchfiles.main - INFO - 2 changes detected
+2024-05-27 08:05:53,387 - watchfiles.main - INFO - 3 changes detected
+2024-05-27 08:08:29,941 - watchfiles.main - INFO - 1 change detected
+2024-05-27 08:08:31,573 - watchfiles.main - INFO - 2 changes detected
+2024-05-27 08:08:31,937 - watchfiles.main - INFO - 3 changes detected
+2024-05-27 08:08:38,106 - main - INFO - Request: GET http://127.0.0.1:8000/
+2024-05-27 08:08:38,119 - main - INFO - Request: 200
+2024-05-27 08:08:38,131 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:08:38,133 - main - INFO - Request: 404
+2024-05-27 08:08:41,015 - main - INFO - Request: GET http://127.0.0.1:8000/
+2024-05-27 08:08:41,020 - main - INFO - Request: 200
+2024-05-27 08:08:41,031 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:08:41,035 - main - INFO - Request: 404
+2024-05-27 08:08:50,076 - main - INFO - Request: GET http://127.0.0.1:8000/contact
+2024-05-27 08:08:50,084 - main - INFO - Request: 200
+2024-05-27 08:08:50,096 - main - INFO - Request: GET http://127.0.0.1:8000/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+2024-05-27 08:08:50,097 - main - INFO - Request: 404
